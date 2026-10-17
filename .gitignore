@@ -1,0 +1,10 @@
+# Local development environment
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Independently cloned reference repositories
+/data/
+/investigate/
