@@ -1,0 +1,14 @@
+{
+  "report_links_checked": 16,
+  "png_files_verified": 13,
+  "cdf_rank_and_mass_checks": "passed",
+  "bandwidth_csv_integral_checks": "passed",
+  "all_generated_file_hashes": "passed",
+  "required_sections": [
+    "汇总表与SLO柱状图",
+    "C_A/C_B四策略full-sort-ms",
+    "利用率分布与热图",
+    "存储带宽时序",
+    "总体与分类TTFT CDF"
+  ]
+}
