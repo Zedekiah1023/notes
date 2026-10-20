@@ -1,0 +1,21 @@
+{
+  "question": "提高 lam_each 是否减少 TFS 下的实例空闲，并提高实际组批规模？",
+  "inputs": {"C_A": [416, 417, 418], "C_B": [424]},
+  "requests_per_class": 120,
+  "total_requests": 360,
+  "arrival_rates_each_per_s": [98, 147, 196],
+  "multipliers": [1, 1.5, 2],
+  "runs_per_rate": 1,
+  "total_runs": 24,
+  "admission_modes": ["immediate", "tfs"],
+  "workers": 32,
+  "max_num_seqs": 8,
+  "max_num_batched_tokens": 8192,
+  "storage_Bps": 120000000000,
+  "generator": "同一 SA d1f_specs，k=16，n=120，各输入保持原种子和 C 类形状；只改变 lam_each",
+  "deadline": "arrival_s + 4*T0_s；T0 和期限宽度保持一致，不能将整条 deadline 直接除以倍率",
+  "routing": "真实 Dynamo 原生选路，各格运行一次；保留原生平局随机性，不用上一实验的固定路由替代",
+  "metrics": ["实际 batch 请求数与 token 数", "多请求 step 占比", "计算/IO等待/空闲时间占比", "总体与分类 TTFT/SLO", "中央等待", "存储带宽和字节积分", "全部完成时间"],
+  "checks": ["1倍 trace 与原冻结输入逐请求一致", "各倍率到达时间按倍率压缩且期限宽度不变", "原 check_sa_results 完整验收", "原始读取字节保持一致", "图表与逐请求数据复算一致"],
+  "limits": "C_A 为三个输入种子，C_B 为原正式矩阵的一个输入种子；各格单次路由，不作为统计显著性或真实硬件性能结论。"
+}
