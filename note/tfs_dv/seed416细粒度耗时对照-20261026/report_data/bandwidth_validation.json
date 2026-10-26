@@ -1,0 +1,30 @@
+{
+  "native-immediate": {
+    "bytes": 205581189120.00433,
+    "absolute_error_B": 0.00433349609375,
+    "oversubscribed_pct": 56.210437868227636,
+    "saturated_pct": 76.68219184336031,
+    "average_GBs": 46.00931510601693
+  },
+  "native-tfs": {
+    "bytes": 205581189120.00766,
+    "absolute_error_B": 0.007659912109375,
+    "oversubscribed_pct": 29.343512373300374,
+    "saturated_pct": 72.0540007710797,
+    "average_GBs": 43.2324004626481
+  },
+  "des-immediate": {
+    "bytes": 205581189120.00034,
+    "absolute_error_B": 0.000335693359375,
+    "oversubscribed_pct": 52.46583928947081,
+    "saturated_pct": 73.23741368811002,
+    "average_GBs": 43.94244821286607
+  },
+  "des-tfs": {
+    "bytes": 205581189119.99942,
+    "absolute_error_B": 0.000579833984375,
+    "oversubscribed_pct": 79.10773519383237,
+    "saturated_pct": 89.26095529323624,
+    "average_GBs": 53.55657317594161
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "packages": {
+    "vllm": "0.20.2+empty",
+    "torch": "2.11.0+cpu",
+    "ai-dynamo-runtime": "1.5.0"
+  },
+  "sources": {
+    "vllm": {
+      "repo": "vllm-project/vllm",
+      "tag": "v0.20.2",
+      "sha": "bc150f50299199599673614f80d12a196f377655"
+    },
+    "ascend": {
+      "repo": "vllm-project/vllm-ascend",
+      "tag": "v0.20.2rc1",
+      "sha": "367b8e62da799870a7476ce34f5f7658589a8aad"
+    },
+    "dynamo": {
+      "repo": "ai-dynamo/dynamo",
+      "tag": "v1.5.0",
+      "sha": "b83b1d9304ebfc624709ac46db32b1b6f1ff1615"
+    }
+  },
+  "source_fingerprints": {
+    "upstream/vllm/vllm/v1/core/sched/scheduler.py": true,
+    "upstream/vllm/vllm/v1/core/kv_cache_manager.py": true,
+    "upstream/vllm/vllm/v1/core/block_pool.py": true,
+    "upstream/vllm/vllm/v1/core/kv_cache_utils.py": true,
+    "upstream/vllm/vllm/v1/outputs.py": true,
+    "upstream/vllm/vllm/v1/request.py": true,
+    "upstream/vllm/vllm/distributed/kv_transfer/kv_connector/v1/base.py": true,
+    "upstream/ascend/vllm_ascend/patch/platform/patch_balance_schedule.py": true,
+    "upstream/dynamo/lib/kv-router/src/scheduling/selector/policy.rs": true,
+    "upstream/dynamo/lib/kv-router/src/services/selection/core/mod.rs": true,
+    "upstream/dynamo/lib/bindings/python/src/dynamo/_core.pyi": true,
+    "upstream/ascend/vllm_ascend/distributed/kv_transfer/kv_pool/ascend_store/backend/backend.py": true
+  },
+  "wsl_memory_limit_gib": 24,
+  "trace_sha256": "35e488b618a8744b420eb7a1876d4a8efeb4c7bb0d3f8def55754f9a4b918750"
+}

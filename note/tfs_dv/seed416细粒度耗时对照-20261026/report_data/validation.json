@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "scope": "Public report and aggregates only; raw experiment data excluded",
+  "formal_runs": 4,
+  "formal_requests": 1440,
+  "relative_links_checked": 15,
+  "figure_count": 7,
+  "original_checks": {
+    "max_ledger_error_ms": 4.320099833421409e-12,
+    "max_bandwidth_integral_error_B": 0.007659912109375,
+    "source_fingerprints_all_match": true,
+    "ecdf": "rank/n; monotonic; endpoint1",
+    "visual_review": "All 7 PNGs opened and reviewed; no missing Chinese glyphs, clipping or legend collision"
+  },
+  "sha256": {
+    "实验结果-seed416细粒度耗时对照-20261026.md": "5d8e89e3a40ae738bef6c6e66e3758bfcfdb4a061ad59bb8bbe16cf79873d673",
+    "figure/01_slo.png": "409199adc6701c75f0b1706ed9d4b0b0d0ad6f75403506044132ba57fe27f7eb",
+    "figure/02_full-sort-ms.png": "f9336bc2e767da26e66f4717e5c37bea308e510e444114c796b0a197a94c7fdc",
+    "figure/03_utilization.png": "b842bde2069161e083eab2e690f4d2d4c60ab6e2b06d0f478ee3f40b7404ddaf",
+    "figure/04_bandwidth.png": "9e30119f8a5810eff0be56d82bcb119ed177615871d3597178100f9721863307",
+    "figure/05b_cdf_by_class.png": "5d6e09cb23fa49927c85236824c63bb07be811ee8de8e64a6c8015913f65cf75",
+    "figure/05_cdf.png": "0445cc18f6f1aca6ac2b495153b827d9d871cc6a0ce0ccd2772a7261efdc66b1",
+    "figure/06_A_post_submit.png": "864a7c1a588595211e3632fb197bc74b6195e588c9211328e64e4845ae8f12cf",
+    "report_data/A_stage_comparison.csv": "990559b117ed5bf27810dfade7d72a1c9893f0b50e3ab6ad0493aac02e343e8b",
+    "report_data/bandwidth_validation.json": "bf9ecc611c39c68ebd1d2415d8fbaad4879d8d1ec06ace2325c4fc1b90cb5ccf",
+    "report_data/rpc_summary.csv": "a5e5aae10826d9c0c87ed19bc6831b68b0ea644499c06f0673241237fda0e675",
+    "report_data/summary.json": "1088623102a7ec0ace474dfd5e4d630448540ff8ad94b5846777859df6effc9f",
+    "report_data/utilization.csv": "b2eb7cd52433d5785979e663f9fc8a670d02e750ea0355f31eb84a02ab07c437",
+    "reproduce/README.md": "7be191bdb7aa1ea008612bbaf3a9d3dbf30a5683d907f387a46d0b5d28aa2f9e",
+    "report_data/control/environment.json": "5685e5834809eb53d515921e4465bb71550ec358e5e92ee9dbfc509586047635"
+  }
+}
