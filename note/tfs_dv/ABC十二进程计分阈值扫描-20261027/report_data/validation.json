@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "public export",
+  "local_validation_sha256": "55c9a268f781b07ec90b12fcb10ba39d403a73bd8ec9ea2922a2a3fc18893527",
+  "png_count": 7,
+  "visual_review": "passed; published PNGs are identical to reviewed local figures",
+  "files": {
+    "figure/01_slo.png": "9a257f6d62ae5c17897fc7f2e66d325a38492709fb39a58edf851f28787538e4",
+    "figure/02_full-sort-ms.png": "d3f38bdb1ffa6b85380acfd5e534a9816f54712c110bdab91872c0ff92c70ebc",
+    "figure/03_utilization.png": "0245ec5819c97350ce2812c25500ac151acf7c82323b617448780da3d309b586",
+    "figure/04_bandwidth.png": "d2a2aebebc351c74136ca026bb48bab1271ba981023463a44b23cf29df34aafb",
+    "figure/05_cdf.png": "b1cded581093046bea386feb51ad6aacd68efc1d74e22754a73959d84fdd3f58",
+    "figure/05b_class_cdf.png": "33bfeac664c08bb37a8a9751b144c174e2592b801e05defff966efd0eb70d242",
+    "figure/06_tradeoff.png": "d3aeb280169e7a42cc269b6a347583a39a247303ca3bb54be87877a7d48f0518",
+    "report_data/bandwidth_validation.json": "9eabf0803a8cf4dc744ec778357931bc2b6b1d69a17648a3c3de468dae589861",
+    "report_data/checks.json": "607ab30ddcd04ff003fd3ddbf1c6ffc1f2507e06b3fb979d228cd10e2bd0b38b",
+    "report_data/mechanism_summary.json": "e33e88f251471775a6d74328afaaccf246f480b2197040f4279f77a116898609",
+    "report_data/run_metadata.json": "c16f4cc644d6ae47258a68f7eac4d93d5914ac4321a782102a2483a99e1bf57e",
+    "report_data/styles.json": "295263e9c75d1d7eed8bf11ae1b7c488353fb1e9b06aa532695ca31a2e761003",
+    "report_data/summary.csv": "41b73d9777b6a1ad2aa41459fcbc10a039d23353c794409689f7d0df9641418a",
+    "report_data/summary.json": "255f8e4ab6799b95aaad2d6fc721f7eb399feef767199d66a9772c94f78daee2",
+    "report_data/utilization.csv": "46f2f9e1ed670d78589cd6dd9cef149b4be756be52269e36ad762c08f6c1f901",
+    "实验结果-ABC十二进程计分阈值扫描-20261027.md": "a860ec8bb2671e295eb2d447af62f16a927ae67bd54b2f8f6a9cd33798d9b171"
+  }
+}

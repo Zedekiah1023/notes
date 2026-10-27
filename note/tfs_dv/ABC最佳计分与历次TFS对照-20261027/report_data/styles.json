@@ -1,0 +1,27 @@
+{
+  "des-tfs": {
+    "name": "单进程 TFS（DES）",
+    "color": "#55A868",
+    "line_style": "--"
+  },
+  "native-tfs": {
+    "name": "12实例旧 TFS",
+    "color": "#55A868",
+    "line_style": "-"
+  },
+  "native-first": {
+    "name": "12实例新 TFS·KV查询前准入",
+    "color": "#6A9FDA",
+    "line_style": "-"
+  },
+  "native-immediate": {
+    "name": "12实例直接放行",
+    "color": "#888888",
+    "line_style": "-"
+  },
+  "a0p1": {
+    "name": "最新 TFS α=0.1",
+    "color": "#9974A5",
+    "line_style": "-"
+  }
+}

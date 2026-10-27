@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "runs": {
+    "a0": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 2.2737367544323206e-12
+    },
+    "a0p1": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 3.154809746774845e-12
+    },
+    "a0p25": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 1.1368683772161603e-11
+    },
+    "a0p5": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 1.0942358130705543e-11
+    },
+    "a1": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 1.0913936421275139e-11
+    }
+  },
+  "bytes_tolerance_B": 1,
+  "cdf_monotonic_and_endpoint_one": true,
+  "quantile": "linear interpolation at (n-1)*p",
+  "utilization": "sum step.parts.modeled_compute / makespan per worker",
+  "new_formal_attempts": 6,
+  "new_valid_formal_runs": 5,
+  "excluded_failed_attempts": 1,
+  "historical_reused": 0
+}

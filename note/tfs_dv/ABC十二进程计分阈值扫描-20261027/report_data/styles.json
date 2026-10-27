@@ -1,0 +1,27 @@
+{
+  "a0": {
+    "name": "最新 TFS α=0",
+    "color": "#9974A5",
+    "line_style": "-"
+  },
+  "a0p1": {
+    "name": "最新 TFS α=0.1",
+    "color": "#55A868",
+    "line_style": "-"
+  },
+  "a0p25": {
+    "name": "最新 TFS α=0.25",
+    "color": "#4C72B0",
+    "line_style": "-"
+  },
+  "a0p5": {
+    "name": "最新 TFS α=0.5",
+    "color": "#DD8452",
+    "line_style": "-"
+  },
+  "a1": {
+    "name": "最新 TFS α=1",
+    "color": "#888888",
+    "line_style": "-"
+  }
+}

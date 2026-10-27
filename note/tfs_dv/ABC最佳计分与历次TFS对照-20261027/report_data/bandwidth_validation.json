@@ -1,0 +1,37 @@
+{
+  "des-tfs": {
+    "bytes": 205581189119.99942,
+    "error_B": -0.000579833984375,
+    "average_GBps": 53.556573175941615,
+    "oversubscribed_pct": 79.10773519383237,
+    "saturated_pct": 89.26095529323624
+  },
+  "native-tfs": {
+    "bytes": 205581189120.00766,
+    "error_B": 0.007659912109375,
+    "average_GBps": 43.2324004626481,
+    "oversubscribed_pct": 29.343512373300374,
+    "saturated_pct": 72.0540007710797
+  },
+  "native-first": {
+    "bytes": 205581189120.0018,
+    "error_B": 0.001800537109375,
+    "average_GBps": 47.822329736230685,
+    "oversubscribed_pct": 37.79402563895404,
+    "saturated_pct": 79.7038828937177
+  },
+  "native-immediate": {
+    "bytes": 205581189120.00433,
+    "error_B": 0.00433349609375,
+    "average_GBps": 46.00931510601693,
+    "oversubscribed_pct": 56.210437868227636,
+    "saturated_pct": 76.68219184336031
+  },
+  "a0p1": {
+    "bytes": 205581189120.00305,
+    "error_B": 0.0030517578125,
+    "average_GBps": 47.781052150218876,
+    "oversubscribed_pct": 37.532635440006516,
+    "saturated_pct": 79.63508691703127
+  }
+}

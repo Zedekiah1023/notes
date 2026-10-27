@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "runs": {
+    "des-tfs": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 4.547473508864641e-13
+    },
+    "native-tfs": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 4.320099833421409e-12
+    },
+    "native-first": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 5.115907697472721e-12
+    },
+    "native-immediate": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 2.2168933355715126e-12
+    },
+    "a0p1": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 3.154809746774845e-12
+    }
+  },
+  "bytes_tolerance_B": 1,
+  "cdf_monotonic_and_endpoint_one": true,
+  "quantile": "linear interpolation at (n-1)*p",
+  "utilization": "sum step.parts.modeled_compute / makespan per worker",
+  "new_formal_attempts": 0,
+  "new_valid_formal_runs": 0,
+  "excluded_failed_attempts": 0,
+  "historical_reused": 4
+}

@@ -1,0 +1,85 @@
+{
+  "report_date": "2026-10-27",
+  "dv_commit": "febfe8c784d389523a65dcc15c4c23cb831d38f8",
+  "trace_sha256": "35e488b618a8744b420eb7a1876d4a8efeb4c7bb0d3f8def55754f9a4b918750",
+  "input": {
+    "seed": 416,
+    "requests": 360,
+    "classes": {
+      "A": 120,
+      "B": 120,
+      "C": 120
+    },
+    "planned_arrival_window_model_s": 3.612,
+    "read_bytes_per_run": 205581189120,
+    "new_tokens_per_run": 841080
+  },
+  "configuration": {
+    "workers": 12,
+    "shared_storage_GBps": 60,
+    "max_num_batched_tokens": 8192,
+    "max_num_seqs": 4,
+    "layers": 8,
+    "wall_time_scale": 10,
+    "classification": "arrival",
+    "admission_placement": "scheduler before external KV query",
+    "release_on": "first_token",
+    "admission_rpc": "Dynamo TCP/MessagePack",
+    "score_rpc": "persistent TCP JSON"
+  },
+  "sweep": {
+    "alphas": [
+      0,
+      0.1,
+      0.25,
+      0.5,
+      1
+    ],
+    "valid_runs": 5,
+    "formal_attempts": 6,
+    "valid_runs_per_factor": 1,
+    "best_factor": 0.1,
+    "selection_rule": "minimum overall mean TTFT; ties by higher SLO, then lower makespan, then lower alpha"
+  },
+  "failed_attempts": [
+    {
+      "alpha": 0.25,
+      "error": "DynamoAdmissionRPC.exchange future.result timed out after 5 wall seconds in worker9/11",
+      "config_unchanged_on_retry": true,
+      "excluded_from_performance": true
+    }
+  ],
+  "failure_root_cause": "not established; no memory guard or swap; did not relax timeout, change protocol, or replay ambiguous RPC",
+  "controlled_variables": {
+    "status": "passed",
+    "only_config_difference": "routing_accounting.waiting_factor",
+    "source_code_identical": true,
+    "adapters_identical": true,
+    "trace_identical": true,
+    "native_binaries": {
+      "a0": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e",
+      "a0p1": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e",
+      "a0p25": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e",
+      "a0p5": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e",
+      "a1": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e"
+    }
+  },
+  "release_build": {
+    "base_commit": "b83b1d9304ebfc624709ac46db32b1b6f1ff1615",
+    "patch": {
+      "lib/kv-router/src/lib.rs": "8309d1a5f574201a66d5ea8707c8b10c16321b605dbd9acd0dcf20213f983326",
+      "lib/kv-router/src/scheduling/selector/default.rs": "5a28124a81dde1e63ad0d1fe925d6eb3b94aeda1ae9b45a4ab155fb083d17851",
+      "lib/kv-router/src/scheduling/queue.rs": "5b304a3fd329401bda0d7d96398ac7126bde5d70670ba0c7a0c8216483999edd",
+      "lib/kv-router/src/sequences/request_maps.rs": "eb02c11467c78b7a497da7755ac6a39893f7339edc77a9f21b1092e621203c04",
+      "lib/kv-router/src/pending_score.rs": "9917871b9251a7dd2e8fe6423d1a72a329b00eb0c0aa22ceda6c261ef8bba46d"
+    },
+    "overlay_recipe_sha256": "c3e4f8e9159f10bc8b6608ddeb31acc4a0633026c02f7e54d88837c20b2ce084",
+    "native_sha256": "e099b522385fccb2ef562e227b082d46a4ee34f1a4a947f4806a38df2df8825e",
+    "cargo_lock_sha256": "ef130e56a85d14622c8b290af1dafe97bc2ea8393c329acbcf41e08c96683e8e",
+    "profile": "release",
+    "toolchain": "rustc 1.96.1 (31fca3adb 2026-06-26)"
+  },
+  "reused_historical_runs": 0,
+  "local_report_sha256": "5e50352e3e0e6c6da81550123cbed0db37f6826dad892fe62438b60ffa8b4ee0",
+  "public_scope": "Report, unchanged PNGs, aggregate metrics and small verification summaries. No per-request data, events, trace, logs, source code, binary, redraw scripts or ZIP."
+}

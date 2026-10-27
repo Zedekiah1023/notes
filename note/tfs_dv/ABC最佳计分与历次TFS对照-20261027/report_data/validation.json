@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "public export",
+  "local_validation_sha256": "61c2f25df6561c1160d361f343c36507516de4f76708dcff9b3daa0367a1df50",
+  "png_count": 6,
+  "visual_review": "passed; published PNGs are identical to reviewed local figures",
+  "files": {
+    "figure/01_slo.png": "423235ecfff7c4b58b2555f6fb7317a1d01b9aeb8d9e929392ce6ce67e2d565f",
+    "figure/02_full-sort-ms.png": "c6a8a3d8ea9679819d0ab0d7e249de2943dc723dc0495f210a350ad23f51d201",
+    "figure/03_utilization.png": "b1e604b9ddf56c589418e50df871984cb3be9d0f6b8fdf9aa37473241a340989",
+    "figure/04_bandwidth.png": "20d1d06374cb2cba991c5bdebe82f5cc076b9cf288c38b0634951f1936531d46",
+    "figure/05_cdf.png": "3b94fa3539a8f58a212236246d385d23b0398dde56d4e0915930687b111f3ae5",
+    "figure/05b_class_cdf.png": "1b1e344c05608eb0269a38010210b8ba10bd094d4f59d480b6e5418ae9d29ce3",
+    "report_data/bandwidth_validation.json": "98b70a20ebb868d451285ea314fe5da6946d20116861777583beaef3dc3223a6",
+    "report_data/checks.json": "18e1f5f4d9b067128f5195abcd38149abcdc031bf6e10648f835a3572f887bfc",
+    "report_data/mechanism_summary.json": "04f9bc4fe1acdbdcf218b9ff6b650505a8c3539fadd38cf7459dcbcc5af8df5b",
+    "report_data/run_metadata.json": "4dda5ac59d98537088a65651ed591e5f4bad8c1531336f494997c0307390b548",
+    "report_data/styles.json": "6bbbf239eca397b2e5c5682ab58d914b7730aa6d0301dab41cdcd93ed0dabdb6",
+    "report_data/summary.csv": "74e79e0df7e47e9a1accb93315686dcba4367cddfbbad3c631cc4f1b79df2fc7",
+    "report_data/summary.json": "10fe03102f0e2959cc7da2c4543ed042da34e1132d454e3bc030809797829f35",
+    "report_data/utilization.csv": "36446af97a07463688f3ba8a912f175397cfba87d1bc82f2484bf900f9fb600c",
+    "实验结果-ABC最佳计分与历次TFS对照-20261027.md": "a0804beb16c571d030aa66b715c4cb54775a04ee975bce43bf16204830231b7c"
+  }
+}
