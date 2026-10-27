@@ -55,6 +55,17 @@
       "matches_source_summary": true,
       "slo_matched_per_request": true,
       "max_request_ledger_error_ms": 3.154809746774845e-12
+    },
+    "priority-a0p1": {
+      "requests": 360,
+      "classes": {
+        "A": 120,
+        "B": 120,
+        "C": 120
+      },
+      "matches_source_summary": true,
+      "slo_matched_per_request": true,
+      "max_request_ledger_error_ms": 5.5706550483591855e-12
     }
   },
   "bytes_tolerance_B": 1,

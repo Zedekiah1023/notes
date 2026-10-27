@@ -80,6 +80,27 @@
     "toolchain": "rustc 1.96.1 (31fca3adb 2026-06-26)"
   },
   "reused_historical_runs": 4,
-  "local_report_sha256": "241ba81f144d555b64e3ad45202976c17303b388b1443842dc6d6d2184da44a8",
-  "public_scope": "Report, unchanged PNGs, aggregate metrics and small verification summaries. No per-request data, events, trace, logs, source code, binary, redraw scripts or ZIP."
+  "local_report_sha256": "718cf768149aa3566fc3166da431fbb53841d1bca9d93d5c7891ab95efa3bdb0",
+  "public_scope": "One report, six identical reviewed PNGs, aggregate metrics and small audit summaries.",
+  "report_cases": 6,
+  "new_experiment_runs_in_this_publication": 0,
+  "reused_scan_runs": 1,
+  "reused_priority_runs": 1,
+  "priority": {
+    "dv_commit": "5a19e0ffc230cdf0acde6ec67a30b8f5f73a9c71",
+    "requests": 360,
+    "formal_runs": 1,
+    "smoke_requests": 6,
+    "effective_config_changes": {
+      "request_ordering": {
+        "old": null,
+        "new": "budget_priority"
+      },
+      "policy": {
+        "old": "fcfs",
+        "new": "priority"
+      }
+    },
+    "test_count": 192
+  }
 }

@@ -113,5 +113,121 @@
         "total_wall_ms": 432.044687
       }
     }
+  },
+  "priority-a0p1": {
+    "factor": 0.1,
+    "heavy_by_class": {
+      "B": 1,
+      "A": 120
+    },
+    "admission_events": {
+      "request_arrived": 360,
+      "threshold_updated": 360,
+      "storage_hint_created": 360,
+      "request_correlated": 360,
+      "request_submitted": 360,
+      "storage_hint_forwarded": 360,
+      "budget_priority_forwarded": 360,
+      "hit_contract_bound": 360,
+      "routing_score_registered": 121,
+      "http_forwarded": 360,
+      "worker_assigned": 360,
+      "feedback_received": 3240,
+      "feedback_delivered": 3240,
+      "routing_score_activated": 121,
+      "admission_reserved": 121,
+      "read_permit_denied": 12666,
+      "admission_released": 121
+    },
+    "score_check": {
+      "status": "passed",
+      "factor": 0.1,
+      "heavy": 121,
+      "requests": 360,
+      "transitions": {
+        "registered": 121,
+        "bound_waiting": 121,
+        "activated": 121,
+        "closed": 121
+      },
+      "native_worker_selection": true,
+      "full_resource_gauges_drained": true,
+      "score_ledger_drained": true,
+      "discounted_candidate_scores": 3915,
+      "score_control_calls": 242,
+      "score_control_mean_wall_ms": 1.267317123966942
+    },
+    "queries": 360,
+    "queries_by_class": {
+      "C": 120,
+      "B": 120,
+      "A": 120
+    },
+    "arrival_span_s": 3.603946817799999,
+    "routes": {
+      "A": {
+        "10": 14,
+        "4": 7,
+        "9": 11,
+        "5": 12,
+        "1": 7,
+        "6": 9,
+        "7": 7,
+        "0": 10,
+        "8": 13,
+        "3": 13,
+        "11": 6,
+        "2": 11
+      },
+      "B": {
+        "2": 10,
+        "11": 11,
+        "5": 10,
+        "0": 10,
+        "3": 9,
+        "4": 10,
+        "6": 9,
+        "7": 10,
+        "9": 11,
+        "8": 8,
+        "10": 10,
+        "1": 12
+      },
+      "C": {
+        "3": 10,
+        "6": 14,
+        "0": 12,
+        "5": 8,
+        "7": 10,
+        "9": 6,
+        "8": 13,
+        "1": 8,
+        "4": 12,
+        "11": 12,
+        "2": 10,
+        "10": 5
+      }
+    },
+    "steps": 301,
+    "batch_histogram": {
+      "1": 252,
+      "2": 31,
+      "3": 13,
+      "4": 5
+    },
+    "read_acquire_rpc": {
+      "full": {
+        "count": 12666,
+        "mean_wall_ms": 1.5096915673456497,
+        "p95_wall_ms": 2.458721,
+        "total_wall_ms": 19121.753392
+      },
+      "granted": {
+        "count": 121,
+        "mean_wall_ms": 3.4954255371900826,
+        "p95_wall_ms": 8.91576,
+        "total_wall_ms": 422.94649
+      }
+    }
   }
 }

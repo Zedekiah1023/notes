@@ -33,5 +33,12 @@
     "average_GBps": 47.781052150218876,
     "oversubscribed_pct": 37.532635440006516,
     "saturated_pct": 79.63508691703127
+  },
+  "priority-a0p1": {
+    "bytes": 205581189120.00272,
+    "error_B": 0.002716064453125,
+    "average_GBps": 48.61915145391867,
+    "oversubscribed_pct": 40.67883670452271,
+    "saturated_pct": 81.031919089864
   }
 }

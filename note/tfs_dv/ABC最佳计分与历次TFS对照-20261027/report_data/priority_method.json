@@ -1,0 +1,57 @@
+{
+  "code_commit": "5a19e0ffc230cdf0acde6ec67a30b8f5f73a9c71",
+  "formula": "deadline - now - T0",
+  "refresh": "each Scheduler.schedule",
+  "time_unit": "model second",
+  "native_priority_unit": "model microsecond",
+  "ordering": "smaller budget first",
+  "reference_service": "fixed original T0",
+  "negative_budget": "preserved",
+  "config_changes": {
+    "request_ordering": {
+      "old": null,
+      "new": "budget_priority"
+    },
+    "policy": {
+      "old": "fcfs",
+      "new": "priority"
+    }
+  },
+  "heavy_classification_changed": [],
+  "audit": {
+    "status": "passed",
+    "requests": 360,
+    "workers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "formula": "deadline-now-T0",
+    "refresh": "each schedule, including running and skipped waiting",
+    "priority_unit": "model microsecond",
+    "rounds": 25133,
+    "request_updates": 83840,
+    "native_heap_heads_checked": 25316,
+    "negative_budget_updates": 77282,
+    "requests_refreshed_multiple_rounds": 132,
+    "requests_with_changing_priority": 132,
+    "max_formula_error_s": 0.0,
+    "metadata_matches_arrived_profiles": true
+  },
+  "same_native_binary": true,
+  "tests": {
+    "prior_run_count": 192,
+    "rerun_in_report_task": false
+  },
+  "original_five_exports_unchanged": true,
+  "raw_source_code_scope": "Private workspace only; this public document contains method and audit summaries."
+}

@@ -20,8 +20,13 @@
     "line_style": "-"
   },
   "a0p1": {
-    "name": "最新 TFS α=0.1",
+    "name": "最新 TFS α=0.1 · FCFS",
     "color": "#9974A5",
+    "line_style": "-"
+  },
+  "priority-a0p1": {
+    "name": "最新 TFS α=0.1 + 预算priority",
+    "color": "#C44E52",
     "line_style": "-"
   }
 }
