@@ -1,0 +1,15 @@
+{
+  "report_date": "2026-10-27",
+  "experiment_date": "2026-10-26",
+  "new_experiment_runs": 0,
+  "historical_single_runs": 4,
+  "replay_main_runs": 10,
+  "replay_trajectory_seed": 0,
+  "trace_sha256": "35e488b618a8744b420eb7a1876d4a8efeb4c7bb0d3f8def55754f9a4b918750",
+  "local_report_sha256": "6b0da6ff9129f3faa9f0a4b2cab4bf41062092b7751928b2c1af0c2ee4743de9",
+  "source_reports": [
+    "ABC额度先于KV查询复跑-20261026",
+    "ABC重读延后计分离线回放-20261026"
+  ],
+  "scope": "Public report, PNGs and aggregate metrics only. No per-request/event/storage interval records or full ZIP."
+}

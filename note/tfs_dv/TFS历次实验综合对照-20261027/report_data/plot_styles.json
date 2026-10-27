@@ -1,0 +1,32 @@
+{
+  "des-tfs": {
+    "color": "#55A868",
+    "line_style": "--",
+    "name": "单进程 TFS（DES）"
+  },
+  "native-tfs": {
+    "color": "#55A868",
+    "line_style": "-",
+    "name": "旧 TFS（十二进程）"
+  },
+  "native-v1": {
+    "color": "#DD8452",
+    "line_style": "-",
+    "name": "新 TFS·KV查询后准入"
+  },
+  "native-first": {
+    "color": "#6A9FDA",
+    "line_style": "-",
+    "name": "新 TFS·KV查询前准入"
+  },
+  "replay-dispatch": {
+    "color": "#888888",
+    "line_style": "-.",
+    "name": "离线回放·下发即计分"
+  },
+  "replay-deferred": {
+    "color": "#9974A5",
+    "line_style": "-.",
+    "name": "离线回放·获准后计分"
+  }
+}

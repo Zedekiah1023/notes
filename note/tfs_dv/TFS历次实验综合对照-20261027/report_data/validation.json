@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "scope": "public export",
+  "new_experiment_runs": 0,
+  "full_local_validation_sha256": "98e58db75241f01636e28a425485cefead148c56dfab2e05fb33b2d48030e0ee",
+  "local_request_results_checked": 2160,
+  "local_cdf_groups_checked": 24,
+  "local_storage_tolerance_B": 1,
+  "figures": {
+    "01_slo.png": {
+      "width": 2176,
+      "height": 1040
+    },
+    "02_full-sort-ms.png": {
+      "width": 2640,
+      "height": 2224
+    },
+    "02b_five-short-runs.png": {
+      "width": 2640,
+      "height": 1896
+    },
+    "03_utilization.png": {
+      "width": 2560,
+      "height": 960
+    },
+    "04_bandwidth.png": {
+      "width": 2400,
+      "height": 2240
+    },
+    "05_cdf.png": {
+      "width": 2000,
+      "height": 1056
+    },
+    "05b_class_cdf.png": {
+      "width": 2640,
+      "height": 928
+    }
+  },
+  "visual_review": {
+    "date": "2026-10-27",
+    "png_count": 7,
+    "result": "All seven PNGs opened and reviewed: Chinese labels, legends, axes and whitespace readable."
+  },
+  "files": {
+    "figure/01_slo.png": "ae80cd200afbbc0998d3b6a59d05fe8c19341231236341707d8d929d4190bf81",
+    "figure/02_full-sort-ms.png": "0e98dc5fd44eec2ec1f38fe449ecf060e4b50acc345909d0e42da3d63c3584aa",
+    "figure/02b_five-short-runs.png": "543bf9a85190a7a92d59aed1d57f977a4577c7eddd4a0e336e0125ec437f62ed",
+    "figure/03_utilization.png": "d0a0e8dfed033d8ff0ac1eec5635fb68c74995a806d647be30b13beafb1a3fb5",
+    "figure/04_bandwidth.png": "522e98a7e7f2441165be83a9232e31c97e098fb7a4e6aa3363ec37b3d9d16ad5",
+    "figure/05_cdf.png": "7b05ad6684d548cf331c954aa7b910cdd9e1980315210510332135bf76a70759",
+    "figure/05b_class_cdf.png": "ea9fdd1d29b1b0a622d7801609acf86f71423b88bf88a75240b25fa202daa2e1",
+    "report_data/bandwidth_validation.json": "41adccf2de221535e0a7fa5947eb189356efe3765fed334f70fa7236f51619ff",
+    "report_data/plot_styles.json": "fb5f4803a06aaea273b4b852e75287b43aa80ad8ba7afa064abebc8ec7eb0902",
+    "report_data/replay_repeats.csv": "85f7d209eb6a9be4885f484ec6b48910eac2fc88f4c12642e92a148c526ac2d3",
+    "report_data/sources.json": "48c1a166d78e3a2727700d5c9dc2ed1173344e36250f4a257ec0815180348d6d",
+    "report_data/summary.csv": "121bf29c952bd203714610d69a11f2bdf567ff5ba5f4e360eacd2e21acc67abc",
+    "report_data/summary.json": "084976334d0fac5ae01c14c9c4b58a78da7f3a80afee41247235ca6eb257e4fe",
+    "report_data/utilization.csv": "bd013f260731dc0376e5e46fa0807f052c006f95750874600dd08bcc1609f981",
+    "source_exports/replay/calibration.csv": "ceb8f28b775acdb76aafbd3dfb75fe0657d37e3e56617bc99a37aca6447177be",
+    "source_exports/replay/mechanism.json": "538db2ea3b04b7988eba9642a9f27462218199c454c84ac62dbdbdc4c0ef8c2a",
+    "source_exports/replay/paired_changes.csv": "d731b76aa6be7b3113f52adce76d86e6e6fd7f695d13cd1418e65cc98622f2b7",
+    "source_exports/replay/sensitivity.csv": "4d6aedf8bef909c7443c7fcf29514944c678d33d8d5fa066f7728ea7f5ef262b",
+    "实验结果-TFS历次实验综合对照-20261027.md": "c4229295618e6b3097c0fcaff9103473f927e0741f99559b8dc44507981e625a"
+  }
+}
