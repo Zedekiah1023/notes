@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "scope": "selected public export; no new experimental runs",
+  "formal_requests": 1800,
+  "cases": 5,
+  "same_runtime": false,
+  "full_private_validation_sha256": "faae8f56d79ae06602d4cfbbf4d4a053b7f68d453a53a247de2c8916ac48411d",
+  "local_checks": {
+    "runs": {
+      "fcfs": {
+        "formal": 360,
+        "devices": 12,
+        "steps": 277,
+        "storage_integral_error_bytes": 0.017120361328125,
+        "four_execution_feedback_rpcs": 0,
+        "metrics_and_accounts": true
+      },
+      "edf": {
+        "formal": 360,
+        "devices": 12,
+        "steps": 152,
+        "storage_integral_error_bytes": 0.012420654296875,
+        "four_execution_feedback_rpcs": 0,
+        "metrics_and_accounts": true
+      },
+      "old-tfs": {
+        "formal": 360,
+        "devices": 12,
+        "steps": 342,
+        "storage_integral_error_bytes": 0.072967529296875,
+        "four_execution_feedback_rpcs": 0,
+        "metrics_and_accounts": true
+      },
+      "new-tfs": {
+        "formal": 360,
+        "devices": 12,
+        "steps": 258,
+        "storage_integral_error_bytes": 0.05548095703125,
+        "four_execution_feedback_rpcs": 0,
+        "metrics_and_accounts": true
+      },
+      "idle-bypass": {
+        "formal": 360,
+        "devices": 12,
+        "steps": 256,
+        "storage_integral_error_bytes": 0.015411376953125,
+        "four_execution_feedback_rpcs": 0,
+        "metrics_and_accounts": true
+      }
+    },
+    "report_revision": {
+      "replaced_case": "idle-bypass",
+      "reused_cases": [
+        "fcfs",
+        "edf",
+        "old-tfs",
+        "new-tfs"
+      ],
+      "unchanged_table_rows": 50860,
+      "unchanged_raw_files": 152,
+      "latest_forced_metrics_match": true,
+      "same_sa_compute_storage_formulas": true
+    },
+    "same_formal_input": true,
+    "same_native": true,
+    "bandwidth_integral_tolerance_bytes": 1.0,
+    "visual_reviewed": true
+  },
+  "images": [
+    {
+      "file": "figure/01_slo_bar.png",
+      "width": 1888,
+      "height": 992
+    },
+    {
+      "file": "figure/02_full-sort-ms.png",
+      "width": 2640,
+      "height": 2700
+    },
+    {
+      "file": "figure/03_util_box_heatmap.png",
+      "width": 2240,
+      "height": 848
+    },
+    {
+      "file": "figure/04_bandwidth.png",
+      "width": 2336,
+      "height": 2160
+    },
+    {
+      "file": "figure/05_cdf.png",
+      "width": 1632,
+      "height": 960
+    },
+    {
+      "file": "figure/06_cdf_by_class.png",
+      "width": 2480,
+      "height": 752
+    },
+    {
+      "file": "figure/07_arrival_lateness.png",
+      "width": 1632,
+      "height": 832
+    }
+  ],
+  "figures_and_copied_tables_byte_identical": true,
+  "files": {
+    "figure/01_slo_bar.png": "445cb4d531b0adac1af5136f86db3a2f8e5a304bf8a32b8b0f94e1192c70e047",
+    "figure/02_full-sort-ms.png": "983cec5996dea395cc57f48e69b90f8f9916cc983ddef13c6014b4f5881d3dc1",
+    "figure/03_util_box_heatmap.png": "90ab74b62a8c31967f27ef0eb13f7aaed9dcf73870aef93dc75ac7f1a77a8071",
+    "figure/04_bandwidth.png": "87fd6263a3a4d8c4a34c4e39bd3d1a5564d2957326dd48043c7303cbc9e3bc61",
+    "figure/05_cdf.png": "c8a387756ea754ef4456aa94427f26fd0db6508fd01120efb278366c63b62af3",
+    "figure/06_cdf_by_class.png": "ab1dce87a82deae48df5e6ab23dc72f1f2d9e438d6bff7007fed7f3ea1816d6b",
+    "figure/07_arrival_lateness.png": "fe048265a639fac3a8374f8f6580a311c9325f6e313c4adb13d5f241bba5ad8a",
+    "report_data/bandwidth_10ms.csv": "a7474153891e3c41fdb8fe6fc72fe1b02b5324299882736404f4da0f9f39aea5",
+    "report_data/bandwidth_summary.csv": "dd106f25b4594e3179fc91df3beea80b127661fb66f7248a1d860b98a2214b29",
+    "report_data/cdf.csv": "e118ab1c25bce7483d37f9b0d824b2eeb07fca6cefc2a7b297391bf288638e98",
+    "report_data/device_utilization.csv": "d3f308f7e926d22a37c9660259b46b3c571db6c36a6234adc945b831f4954b8a",
+    "report_data/full_summary.json": "b2f660efd7716e2ae56f14654e3320263c051dcd62f5661a2d7c6089064ceaa6",
+    "report_data/idle_bypass_metrics.csv": "ed43b0a763b16c074c1b79ae580674a227d8ce744a394aad57ba073c4b615e51",
+    "report_data/report_revision.json": "7cb2fa4164d424c7a9ead7744bf8bb5eebe23225c5b01125507cb5e689da0372",
+    "report_data/run_metadata.json": "ec96736fc9767225b056c6a9462689d6ae53c7c53e8749d493eafa22dc482bec",
+    "report_data/run_summary.csv": "ebd0a653a1bec99bec37c5d148f45534ca630c5f5a7a40f57f57f1e5f8b0dd12",
+    "实验结果-ABC360移除执行反馈五方案-20261029.md": "fb23e2ed0ada0f4e4c4a3b6a86d22f6402b86b386ad047dcb2eaff2a4584e897"
+  }
+}
