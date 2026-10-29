@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "scope": "Selected report export; no new experiment executed",
+  "source_report": "note\\tfs_dv\\ABC360-seed424五方案-20261029\\实验结果-ABC360-seed424五方案-20261029.md",
+  "source_report_sha256": "32e4c840aa415fb4ada7fee97006eceed88c9477364b73673105bd875d86b7ed",
+  "source_validation_sha256": "7ec110c3ebee46414fed0513b299636d2865ae2d72761fe62bb8b5dabef4c7eb",
+  "unchanged_sections": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "10"
+  ],
+  "modifications": [
+    "Add export notice and index link",
+    "Replace section9 with actual public scope"
+  ],
+  "original_experiment_validation": "passed",
+  "original_visual_reviewed": true,
+  "copied_assets_verified_byte_identical": true,
+  "images": 7,
+  "raw_data_published": false,
+  "full_zip_published": false,
+  "files": {
+    "figure/01_slo_bar.png": {
+      "bytes": 107686,
+      "sha256": "f710bfc4f4ea65a405d87fa6ff67bddaeb934ee457cec6cf109991ed86cae834",
+      "git_blob_sha": "9318be772e47774b53952c4b37349f39ceba5478"
+    },
+    "figure/02_full-sort-ms.png": {
+      "bytes": 308250,
+      "sha256": "b983e534ce7ac770ae22ca54b2849b03b177ed3eacc8084cdbd68b66ec8afd62",
+      "git_blob_sha": "8f1ca2eadc443586d1eb90fadd4c4f87b396cfbe"
+    },
+    "figure/03_util_box_heatmap.png": {
+      "bytes": 109126,
+      "sha256": "7c6fe9676ecd222d2eb0e603ea58ffd0dff2237b6441e81726413318bce0b973",
+      "git_blob_sha": "68826d6d542434b682e0acd399cbe49e29a5c493"
+    },
+    "figure/04_bandwidth.png": {
+      "bytes": 1100831,
+      "sha256": "46113a529b3a0d7a4197d0433b836e2e123d240a1ceb99e764be1d910f49385b",
+      "git_blob_sha": "68c4c24e4253195f606671e5da5b20a33693519c"
+    },
+    "figure/05_cdf.png": {
+      "bytes": 152199,
+      "sha256": "351eac0c7cea936ab7f8ae3a5ebb6fe6cc90c68b2727d9a88854b33df415991f",
+      "git_blob_sha": "f89dcf2b055e9f86a50d08da5142e100399fe3da"
+    },
+    "figure/06_cdf_by_class.png": {
+      "bytes": 210569,
+      "sha256": "eba170035c1e765ce0b945dbc14d1f78d77378551930d544d7c5a86b23bfa3a9",
+      "git_blob_sha": "74a2bd49f43e972e635a1150b716b323c11d04d8"
+    },
+    "figure/07_arrival_lateness.png": {
+      "bytes": 96529,
+      "sha256": "4b9067565245ece3f1bf9b5a4f617dcce1e798933641c12facca6ff18f7179cd",
+      "git_blob_sha": "8eafb9cc8fdfaa701a2ce938e5e654588f69e110"
+    },
+    "report_data/bandwidth_10ms.csv": {
+      "bytes": 243998,
+      "sha256": "cd5eff8a195519db326c14672529b2288aeb918434d443cf3b1cbd2f298ed160",
+      "git_blob_sha": "a8903232836d7f345f05574ba1c60d1bd17b7fdf"
+    },
+    "report_data/bandwidth_summary.csv": {
+      "bytes": 587,
+      "sha256": "86ce076646a4e56fa60f573a6e63645ac28f07393143060f4b37ce3726de78d4",
+      "git_blob_sha": "90beaf9cd15210c5e78f0b220b06460b8ad4097a"
+    },
+    "report_data/cdf.csv": {
+      "bytes": 192448,
+      "sha256": "16e7b12e3d7588d3b11e03c799078977a5076a86aba91b1637fb3bb16765deee",
+      "git_blob_sha": "00bce3ca05da777aab567f9a8539071205b2e95c"
+    },
+    "report_data/device_utilization.csv": {
+      "bytes": 11115,
+      "sha256": "573804bb91ae54ad4134212355f7c5b555e5b7174d0d4a776d3a0d0810558fce",
+      "git_blob_sha": "f1f6be290d7c047c5ca2877f8dc51d0ccb063e17"
+    },
+    "report_data/full_summary.json": {
+      "bytes": 14351,
+      "sha256": "2c3f879004e1a0be3973e57063ba13a69bd4e603b8bef868a9f9a66845609a7c",
+      "git_blob_sha": "946aa515605c628801f5ec92fa1d2470c68ff1e5"
+    },
+    "report_data/idle_bypass_metrics.csv": {
+      "bytes": 756,
+      "sha256": "8b70d670bb08c580f7bad4079916dd55c49d7dcb4cad2ba0c35cabcc140bb4f9",
+      "git_blob_sha": "202d04852e90da2457229cb93bbf691317259da9"
+    },
+    "report_data/input_check.json": {
+      "bytes": 14666,
+      "sha256": "4b3e59330cea4d0eec27ffa97792a9c5be1c45a011ccd7099ed2330d33cf7b78",
+      "git_blob_sha": "98f94f80d723b3a6d5ac9ca4228f764fae286a0d"
+    },
+    "report_data/matrix_receipt.json": {
+      "bytes": 112987,
+      "sha256": "731fb9e08b0a9bb51c47e8cc28de4d57890eafaf3c88ef0d1466ffef86cd1e80",
+      "git_blob_sha": "0b2228060365b32eb0e1ffb8f7a4aa8fdd44d654"
+    },
+    "report_data/plan.json": {
+      "bytes": 16678,
+      "sha256": "2c7f419ddd5fe3fb281309d96d0d2b880fb06f4752dfc3b79f1bda6edcaa7d98",
+      "git_blob_sha": "e5886ed5724597f9cf1e0dccf5ef83139ab1c3b9"
+    },
+    "report_data/provenance_full.json": {
+      "bytes": 21511,
+      "sha256": "896cdd21d8f9ea59f4407c3393b61578fef672644f09c4ed0f64d63c363c008a",
+      "git_blob_sha": "148f15ef173e58c014badf64cfbdde66cc12bd3c"
+    },
+    "report_data/requests_full.csv": {
+      "bytes": 333137,
+      "sha256": "8b90df0f321156fbb847d90db420260320359fa42763ecaad227ecf7f62a3a39",
+      "git_blob_sha": "abe5ce06ceb532213e81ae60d5ca0280b4497654"
+    },
+    "report_data/run_summary.csv": {
+      "bytes": 3220,
+      "sha256": "d6452c9049721a7ac76d3ba38508677bfce40081cd5c66d186a91bc48ca91447",
+      "git_blob_sha": "7928b0a5c1103a4d5047c5168bcf1c43d5a76b16"
+    },
+    "report_data/seed416_reference.csv": {
+      "bytes": 3299,
+      "sha256": "ebd0a653a1bec99bec37c5d148f45534ca630c5f5a7a40f57f57f1e5f8b0dd12",
+      "git_blob_sha": "6cb5a308be16348958c4f344442dfc4c8029829d"
+    },
+    "report_data/seed416_revision_reference.json": {
+      "bytes": 3356,
+      "sha256": "7558a8b4707a8662a683f8bfebd1aa09cec2fdb7ea7c730e1296ddd5942058e4",
+      "git_blob_sha": "a3426131c12f92f9fc1c9e6478fbae2275b01665"
+    },
+    "report_data/seed_comparison.csv": {
+      "bytes": 1288,
+      "sha256": "60fc7544978c99a757d7d9cb0012310efa6983720f183fd073dbe39dffdd2c5f",
+      "git_blob_sha": "6bb68334a94b15b5e81964de1633ec59c471745c"
+    },
+    "report_data/source_validation.json": {
+      "bytes": 41763,
+      "sha256": "7ec110c3ebee46414fed0513b299636d2865ae2d72761fe62bb8b5dabef4c7eb",
+      "git_blob_sha": "50f9b0aff89f53e9a48bcd80490d13f9d4a0a028"
+    },
+    "report_data/step_summary.csv": {
+      "bytes": 98267,
+      "sha256": "d4e12ee0f7c524bfc187744c927b37abe5a945a9bc38946d072204312d1fdeb9",
+      "git_blob_sha": "49560385046583cd9b0ec527d9a8673620261959"
+    },
+    "实验结果-ABC360-seed424五方案-20261029.md": {
+      "bytes": 15219,
+      "sha256": "e5ffc95e0ba9181d80015ee2301ca2f957953e2aac47595acebc4d59240c6abc",
+      "git_blob_sha": "bf196b7efab8599557b012fac0378e632687cb2b"
+    }
+  }
+}

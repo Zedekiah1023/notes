@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "scope": "Selected report export; no new experiment executed",
+  "source_report": "note\\tfs_dv\\Mooncake360-90GB直接组合五方案-20261029\\实验结果-Mooncake360-90GB直接组合五方案-20261029.md",
+  "source_report_sha256": "08af314f19a8bfeae96fff2325f62cda7606846fd5a2f7dfb8d9808e25013b30",
+  "source_validation_sha256": "1a4c54c26820fc648d6e9cdc590119671710d67279cf5e1c37bc30931a3c1a0d",
+  "unchanged_sections": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "10"
+  ],
+  "modifications": [
+    "Add export notice and index link",
+    "Replace section9 with actual public scope"
+  ],
+  "original_experiment_validation": "passed",
+  "original_visual_reviewed": true,
+  "copied_assets_verified_byte_identical": true,
+  "images": 7,
+  "raw_data_published": false,
+  "full_zip_published": false,
+  "files": {
+    "figure/01_slo_bar.png": {
+      "bytes": 93414,
+      "sha256": "949f43dfd91a935da02369ba64659d8aa99e1763af104f7e0ee46d7efb673095",
+      "git_blob_sha": "e5f8528948ddb452f53540587d093a2b3d5d88f7"
+    },
+    "figure/02_full-sort-ms.png": {
+      "bytes": 321132,
+      "sha256": "465178d2423aef02b31cc813c49d3d4229fcabf1d4d0a04fd9573fa6a846d556",
+      "git_blob_sha": "9de5e22f9d061c76aaa23ae9caf2a477b7f62eee"
+    },
+    "figure/03_util_box_heatmap.png": {
+      "bytes": 107432,
+      "sha256": "d54b1c39a25da2998f0459e2019f3e4f35154e0438e30f2927771ae3dda37630",
+      "git_blob_sha": "0e49298ce4917045b748dee89d3a6e7f50004573"
+    },
+    "figure/04_bandwidth.png": {
+      "bytes": 759382,
+      "sha256": "0b170886a65f2e47d41f14fbe6bd48c2158b87ef46fc973291a838ddd1dd84e1",
+      "git_blob_sha": "2d5746f5dd07a4a66442e9064c27f30f2ca80ede"
+    },
+    "figure/05_cdf.png": {
+      "bytes": 144836,
+      "sha256": "684b1b22be87f5bfa7219ee4e7f1308a23b69393b948cec77766d9b8ecca52ba",
+      "git_blob_sha": "e6b4f8e91af8faeb3f6b5925c2d32994d088e809"
+    },
+    "figure/06_cdf_by_class.png": {
+      "bytes": 141207,
+      "sha256": "4eda7f896df0a1be835d5415bdedc2ed75718bc686ee88f4d3db3978bcf814cc",
+      "git_blob_sha": "bc0f821bc7050faf427dc906729aec10952e864e"
+    },
+    "figure/07_arrival_lateness.png": {
+      "bytes": 92509,
+      "sha256": "cf0578f7506e7395e1362e5d5dd6ad06f74b346257553a27d6f7e0308473a575",
+      "git_blob_sha": "fc12b27744f9b85e723e9ff83d9d99562063084f"
+    },
+    "report_data/admission_summary.csv": {
+      "bytes": 161,
+      "sha256": "1e4e739703548810ea97f78f471fc37b79e11f521ff4972c1156eb0d67b3257f",
+      "git_blob_sha": "6f1d435881213098519928048cfc20c79bf5e972"
+    },
+    "report_data/bandwidth_10ms.csv": {
+      "bytes": 224407,
+      "sha256": "907b7ef80478e981a69ee88acc7c27e29eab5389a11bd28864bc86aca053f482",
+      "git_blob_sha": "169e07a8357ed74136b079023e8f510c945dfe86"
+    },
+    "report_data/bandwidth_comparison.csv": {
+      "bytes": 1126,
+      "sha256": "713c82f2736b8c745d2a41d6f574811dd78e8bc19d71fff09e1e864b92426f70",
+      "git_blob_sha": "08eb86b2f4e462a517c1364385d2268ca46f4f50"
+    },
+    "report_data/cdf.csv": {
+      "bytes": 199284,
+      "sha256": "ae17a906018f5326b16bb701a7556766e284da200a5424861a760d914f82e2cd",
+      "git_blob_sha": "1de417a7f10192eabf8d80fec7dd9ac044e90064"
+    },
+    "report_data/device_utilization.csv": {
+      "bytes": 7364,
+      "sha256": "d7d0eb5014fd82e236d7800fe54a1c1b81d2d85ae5cc7a5e882921fce4ac9283",
+      "git_blob_sha": "cda32e20c8b83b6a1a615ae7476028e6e5c50427"
+    },
+    "report_data/input_check.json": {
+      "bytes": 13879,
+      "sha256": "c156b614c44d5f607c9fab379b1e0ef0cc0092734674236aabdcb8f944bae91e",
+      "git_blob_sha": "7bd5ab85bfbe10dd7354b5280e3659f265063aff"
+    },
+    "report_data/matrix_receipt.json": {
+      "bytes": 123673,
+      "sha256": "fe04282afcf071928fac27fa5fc445a4fe4a414bb57be3596bee6c06b048d91c",
+      "git_blob_sha": "d8c4370400cd191b990814aa6706d5d4ba3ce6d3"
+    },
+    "report_data/plan.json": {
+      "bytes": 15729,
+      "sha256": "737a4d78fdcaf18f31b853367a19797d5d8d3eac1170ebe9ef605a1fb2c5610b",
+      "git_blob_sha": "bd8e48c4b1c4f9c916362ee71f316eba96d36f91"
+    },
+    "report_data/provenance.json": {
+      "bytes": 42304,
+      "sha256": "d3b19bfdb5985eac798d224ea27d6e27d9fc8daa7e16ad2ce9aa2af6c9f7d804",
+      "git_blob_sha": "c6b24fd21acf09c3efd76da01c978bae136f8e73"
+    },
+    "report_data/requests.csv": {
+      "bytes": 292824,
+      "sha256": "7363863d6fac465fd5e2e2c9d2f37e7aa0d4acc1edfbc0cc5a717fb622999873",
+      "git_blob_sha": "94abacc878f491993d97ae74ee92b18a479cb5ac"
+    },
+    "report_data/run_summary.csv": {
+      "bytes": 3283,
+      "sha256": "af5b34573ce711243e4afb8c1226ed195d6ef1b2abd4602a6562e8aac0f8f41d",
+      "git_blob_sha": "028aae9781edd88fc2334f6e6d2bf1d0e816a536"
+    },
+    "report_data/source_validation.json": {
+      "bytes": 35945,
+      "sha256": "1a4c54c26820fc648d6e9cdc590119671710d67279cf5e1c37bc30931a3c1a0d",
+      "git_blob_sha": "3ba660604ba5e1f59e9e6599040380fcb83d3d7e"
+    },
+    "report_data/summary.json": {
+      "bytes": 10414,
+      "sha256": "b01c54a8f34d759f68f09d0d2107f706ab3598b02a213bc83bb7c100bf4e240e",
+      "git_blob_sha": "9ed13c8462e21e58ced9cab7563dd57cda1d2a8a"
+    },
+    "实验结果-Mooncake360-90GB直接组合五方案-20261029.md": {
+      "bytes": 17380,
+      "sha256": "b03093880c4990f1598e01ded5607c5c8ce8ed03debda6e11f8584c2ed56e2c9",
+      "git_blob_sha": "c93ede5ac798d02a17bf64a496ed7620b7fa7cfe"
+    }
+  }
+}

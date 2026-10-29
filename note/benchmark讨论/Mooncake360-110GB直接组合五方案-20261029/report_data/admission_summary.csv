@@ -1,0 +1,6 @@
+mode,heavy_classified,forced,over_cap,denied,held_peak
+fcfs,0,0,0,0,41
+edf,0,0,0,0,45
+old-tfs,0,0,0,0,12
+new-tfs,102,0,0,266,10
+idle-bypass,102,50,10,19,12

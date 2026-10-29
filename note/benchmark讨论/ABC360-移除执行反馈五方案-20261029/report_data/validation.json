@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "scope": "Selected report export; no new experiment executed",
+  "source_report": "note\\tfs_dv\\ABC360-移除执行反馈五方案-20261029\\实验结果-ABC360移除执行反馈五方案-20261029.md",
+  "source_report_sha256": "dbcee673da4033d74930e64b08c82dff377c25c3e7e454585d097d8658b7ab58",
+  "source_validation_sha256": "faae8f56d79ae06602d4cfbbf4d4a053b7f68d453a53a247de2c8916ac48411d",
+  "unchanged_sections": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "10"
+  ],
+  "modifications": [
+    "Add export notice and index link",
+    "Replace section9 with actual public scope"
+  ],
+  "original_experiment_validation": "passed",
+  "original_visual_reviewed": true,
+  "copied_assets_verified_byte_identical": true,
+  "images": 7,
+  "raw_data_published": false,
+  "full_zip_published": false,
+  "files": {
+    "figure/01_slo_bar.png": {
+      "bytes": 109678,
+      "sha256": "445cb4d531b0adac1af5136f86db3a2f8e5a304bf8a32b8b0f94e1192c70e047",
+      "git_blob_sha": "1671227793b51a6513e14ad48e5a6d6fd2547d82"
+    },
+    "figure/02_full-sort-ms.png": {
+      "bytes": 315232,
+      "sha256": "983cec5996dea395cc57f48e69b90f8f9916cc983ddef13c6014b4f5881d3dc1",
+      "git_blob_sha": "a585b9e5c46b3d4f3ee74ebc55231d1d1237895b"
+    },
+    "figure/03_util_box_heatmap.png": {
+      "bytes": 110067,
+      "sha256": "90ab74b62a8c31967f27ef0eb13f7aaed9dcf73870aef93dc75ac7f1a77a8071",
+      "git_blob_sha": "425429866c1e5f42b5dd32149bae2b7e90ce738a"
+    },
+    "figure/04_bandwidth.png": {
+      "bytes": 924137,
+      "sha256": "87fd6263a3a4d8c4a34c4e39bd3d1a5564d2957326dd48043c7303cbc9e3bc61",
+      "git_blob_sha": "5bcfc568f6c47a740173dac6a99ea346c831f6ce"
+    },
+    "figure/05_cdf.png": {
+      "bytes": 143946,
+      "sha256": "c8a387756ea754ef4456aa94427f26fd0db6508fd01120efb278366c63b62af3",
+      "git_blob_sha": "4880e2c1d3f20265f605af62232ef2c06b03884f"
+    },
+    "figure/06_cdf_by_class.png": {
+      "bytes": 203438,
+      "sha256": "ab1dce87a82deae48df5e6ab23dc72f1f2d9e438d6bff7007fed7f3ea1816d6b",
+      "git_blob_sha": "4b186a14e00584289d76d0b3b6a1f439fde30509"
+    },
+    "figure/07_arrival_lateness.png": {
+      "bytes": 99947,
+      "sha256": "fe048265a639fac3a8374f8f6580a311c9325f6e313c4adb13d5f241bba5ad8a",
+      "git_blob_sha": "cc1a81f944cbe18b764ae0bb750031b7c851883c"
+    },
+    "report_data/bandwidth_10ms.csv": {
+      "bytes": 190363,
+      "sha256": "a7474153891e3c41fdb8fe6fc72fe1b02b5324299882736404f4da0f9f39aea5",
+      "git_blob_sha": "d98b05a2dfc01f79fb53b75802d6456ff56138dd"
+    },
+    "report_data/bandwidth_summary.csv": {
+      "bytes": 604,
+      "sha256": "dd106f25b4594e3179fc91df3beea80b127661fb66f7248a1d860b98a2214b29",
+      "git_blob_sha": "3d72cd65ad7f753b4509e0f6cd10f7655d201ddd"
+    },
+    "report_data/cdf.csv": {
+      "bytes": 192128,
+      "sha256": "e118ab1c25bce7483d37f9b0d824b2eeb07fca6cefc2a7b297391bf288638e98",
+      "git_blob_sha": "b3b6983e7edd001ad1b74f9cf3c8f1686b2a30ea"
+    },
+    "report_data/device_utilization.csv": {
+      "bytes": 11053,
+      "sha256": "d3f308f7e926d22a37c9660259b46b3c571db6c36a6234adc945b831f4954b8a",
+      "git_blob_sha": "bc8c313a7b608bc7280399586ee58affb9f11fbb"
+    },
+    "report_data/full_summary.json": {
+      "bytes": 14462,
+      "sha256": "b2f660efd7716e2ae56f14654e3320263c051dcd62f5661a2d7c6089064ceaa6",
+      "git_blob_sha": "50448e7b179934755c4c8c80b00f59720f10055c"
+    },
+    "report_data/idle_bypass_metrics.csv": {
+      "bytes": 756,
+      "sha256": "ed43b0a763b16c074c1b79ae580674a227d8ce744a394aad57ba073c4b615e51",
+      "git_blob_sha": "29fb5a2947ccdac0bc5c3f75bdb454c52badf611"
+    },
+    "report_data/input_check.json": {
+      "bytes": 13369,
+      "sha256": "613fa377b917c73b56af30cacc011be9b24055c1d0a4d01b3cc1a6a5ff923dc8",
+      "git_blob_sha": "9a0b98a454f4a81590fccdb6cecd35c5d96fcc85"
+    },
+    "report_data/matrix_receipt.json": {
+      "bytes": 116095,
+      "sha256": "dbb230c09e687c7b2887a3f93e32bbfedcf0ce171871a36c801e773654e9f0d2",
+      "git_blob_sha": "3fdbc95a94a136744ffeeaf22da16f2d6ec64616"
+    },
+    "report_data/plan.json": {
+      "bytes": 18804,
+      "sha256": "c78acd3add3f9a1fd780749eb07574e0406e4562f7bb06eb94ed57f151567ddc",
+      "git_blob_sha": "b49aa210f952cccdfcb3b607833ec67342d91553"
+    },
+    "report_data/provenance_full.json": {
+      "bytes": 24696,
+      "sha256": "d8842fdd728fb75f928658dcd0985c958dafe301b1e20d3a0d6aefd071f24088",
+      "git_blob_sha": "a0a50cdf9f9b14a87ab309c6d19e632ecf09b296"
+    },
+    "report_data/report_revision.json": {
+      "bytes": 3356,
+      "sha256": "7558a8b4707a8662a683f8bfebd1aa09cec2fdb7ea7c730e1296ddd5942058e4",
+      "git_blob_sha": "a3426131c12f92f9fc1c9e6478fbae2275b01665"
+    },
+    "report_data/requests_full.csv": {
+      "bytes": 334030,
+      "sha256": "d59c3f2b67dd183596693c31831a5da021bb26190664afe62b984dc6d271529f",
+      "git_blob_sha": "2ef4eec29040cddc4926dd7ce5854fb21e07cc46"
+    },
+    "report_data/revision_baseline.json": {
+      "bytes": 20684,
+      "sha256": "c01f1e94db28db1a769d44460c3cc8e851413334af141ee8cd8b0eaeaf30e72d",
+      "git_blob_sha": "2d7eec4afdef1aaaed28bcbb138b88039488ff4f"
+    },
+    "report_data/run_summary.csv": {
+      "bytes": 3299,
+      "sha256": "ebd0a653a1bec99bec37c5d148f45534ca630c5f5a7a40f57f57f1e5f8b0dd12",
+      "git_blob_sha": "6cb5a308be16348958c4f344442dfc4c8029829d"
+    },
+    "report_data/source_validation.json": {
+      "bytes": 42643,
+      "sha256": "faae8f56d79ae06602d4cfbbf4d4a053b7f68d453a53a247de2c8916ac48411d",
+      "git_blob_sha": "32f28216f79c3c7c479d782dab8e12dcc978cbed"
+    },
+    "report_data/step_summary.csv": {
+      "bytes": 90142,
+      "sha256": "89467b7f06aefba5ea4dd0624d5c23485c87bf6a210468d51f045821e737f41a",
+      "git_blob_sha": "15bc468934deb02e4ee28e98c091cf571a98a847"
+    },
+    "实验结果-ABC360移除执行反馈五方案-20261029.md": {
+      "bytes": 13601,
+      "sha256": "dcfc724134ef7c2d9ed30b3f547cbaf99b0630c7875ed292c1dee49fe341f1d2",
+      "git_blob_sha": "c6cb04a12d30cc5b96ec4c3f10b08420883e1c89"
+    }
+  }
+}
