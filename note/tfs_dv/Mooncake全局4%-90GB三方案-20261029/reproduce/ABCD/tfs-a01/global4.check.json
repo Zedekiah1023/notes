@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "dataset": "ABCD",
+  "name": "tfs-a01",
+  "formal": 360,
+  "K": 1,
+  "mean_ttft_ms": 1993.874141796712,
+  "p95_ttft_ms": 4594.923999975435,
+  "completion_ms": 8056.789167050738,
+  "slo_pct": 7.777777777777778
+}

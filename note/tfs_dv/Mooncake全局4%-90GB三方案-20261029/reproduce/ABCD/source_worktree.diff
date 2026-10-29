@@ -1,0 +1,362 @@
+diff --git a/.gitignore b/.gitignore
+index 695ee78..e0cc2f7 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -117,3 +117,5 @@ dynamo_vllm_cpu_sim/results/zzzz_stack_kv_*_20261025/
+ !/dynamo_vllm_cpu_sim/results/mooncake360_tfs_diagnosis_4_20261028/acceptance.json
+ /dynamo_vllm_cpu_sim/results/mooncake360_tfs_diagnosis_35_20261028/*
+ !/dynamo_vllm_cpu_sim/results/mooncake360_tfs_diagnosis_35_20261028/acceptance.json
++# TFS optimization prototypes: frozen runtime copies, token arrays and full logs stay local.
++/dynamo_vllm_cpu_sim/results/mooncake360_tfs_opt_*/
+diff --git a/docs/Dynamo_vLLM_CPU_Simulation_Design.zh-CN.md b/docs/Dynamo_vLLM_CPU_Simulation_Design.zh-CN.md
+index 2af2580..fa1b3e9 100644
+--- a/docs/Dynamo_vLLM_CPU_Simulation_Design.zh-CN.md
++++ b/docs/Dynamo_vLLM_CPU_Simulation_Design.zh-CN.md
+@@ -992,3 +992,20 @@ GLM画像升级glm5_reference_v3。singleton T0与执行批次使用同一公式
+ 新旧请求压力/期限/SLO可能变化，历史比较必须标明模型版本。
+ 详细方案见`docs/prefill_time实际组批公式接入-20261028.md`，验收按VALIDATION实际记录。
+ 仍未GLM5实机定标，未模拟真实专家倾斜、kernel内部补齐和计算通信重叠。
++## 2026-10-29：前置分诊与层级遥测模式
++
++可选`admission.placement=gateway, classification=arrival`先在中央TFS队列分诊，
++获准后才交给原生Dynamo选实例。中央只使用已到达画像和反馈；没有新增实例队列真值或实时存储传感器。
++配额仍从准入持有到首token，实例内排队可能继续占额。
++
++可选`experiment.batch_feedback`在同一原生batch/层合帧，仍同步确认。
++`experiment.coalesced_feedback`则本地有界保存各层原始事实，在下一同步控制或生命周期事件前确认。
++每事件ID、顺序、字节和原始发生时间保留；中央可见性变晚。
++当前P75计数控制不使用中间层事实；未来依赖实时逐层反馈的算法不能直接沿用此模式。
++缓冲、256KiB帧或RPC限制失败必须判运行失败，不丢弃、不截断、不重连。
++原生路由/完整booking、token预算与slot、逐层读算屏障、物理容量和计算公式不变。
++当前最多4请求×78层形状已进入实验；其他形状和原生Dynamo RPC新模式不能据此宣称通过。
++
++活动许可按请求索引；JSONL流式解析仅复用不可变整数，保留独立可变数组。
++日志64KiB缓冲不改变内存控制事件。正常关闭flush；强杀失败日志可能缺尾。
++说明见`TFS前置分诊与反馈开销对照-20261029.md`，实测结果见包内VALIDATION。
+diff --git a/dynamo_vllm_cpu_sim/DESIGN.zh-CN.md b/dynamo_vllm_cpu_sim/DESIGN.zh-CN.md
+index 2af2580..f16a941 100644
+--- a/dynamo_vllm_cpu_sim/DESIGN.zh-CN.md
++++ b/dynamo_vllm_cpu_sim/DESIGN.zh-CN.md
+@@ -992,3 +992,20 @@ GLM画像升级glm5_reference_v3。singleton T0与执行批次使用同一公式
+ 新旧请求压力/期限/SLO可能变化，历史比较必须标明模型版本。
+ 详细方案见`docs/prefill_time实际组批公式接入-20261028.md`，验收按VALIDATION实际记录。
+ 仍未GLM5实机定标，未模拟真实专家倾斜、kernel内部补齐和计算通信重叠。
++## 2026-10-29：前置分诊与层级遥测模式
++
++可选`admission.placement=gateway, classification=arrival`先在中央TFS队列分诊，
++获准后才交给原生Dynamo选实例。中央只使用已到达画像和反馈；没有新增实例队列真值或实时存储传感器。
++配额仍从准入持有到首token，实例内排队可能继续占额。
++
++可选`experiment.batch_feedback`在同一原生batch/层合帧，仍同步确认。
++`experiment.coalesced_feedback`则本地有界保存各层原始事实，在下一同步控制或生命周期事件前确认。
++每事件ID、顺序、字节和原始发生时间保留；中央可见性变晚。
++当前P75计数控制不使用中间层事实；未来依赖实时逐层反馈的算法不能直接沿用此模式。
++缓冲、256KiB帧或RPC限制失败必须判运行失败，不丢弃、不截断、不重连。
++原生路由/完整booking、token预算与slot、逐层读算屏障、物理容量和计算公式不变。
++当前最多4请求×78层形状已进入实验；其他形状和原生Dynamo RPC新模式不能据此宣称通过。
++
++活动许可按请求索引；JSONL流式解析仅复用不可变整数，保留独立可变数组。
++日志64KiB缓冲不改变内存控制事件。正常关闭flush；强杀失败日志可能缺尾。
++说明见`../docs/TFS前置分诊与反馈开销对照-20261029.md`，实测结果见VALIDATION。
+diff --git a/dynamo_vllm_cpu_sim/README.md b/dynamo_vllm_cpu_sim/README.md
+index a4ae164..9d30053 100644
+--- a/dynamo_vllm_cpu_sim/README.md
++++ b/dynamo_vllm_cpu_sim/README.md
+@@ -1167,3 +1167,18 @@ worker卡数，不能随实际batch变化。GLM画像为`glm5_reference_v3`，
+ 验收包含bulk直接准入、pipeline调度前TFS，两真实worker和混合/分块请求。
+ 独立审计器按事件中的模型版本复算，历史无版本事件仍按旧算法解释。
+ 没有GLM5/D950PR实机定标；专家均匀路由、kernel效率与逻辑通信仍为模型假设。
++## 2026-10-29：前置TFS与层级反馈开销对照
++
++研究配置可用`admission.placement=gateway`、`classification=arrival`在原生Dynamo选实例前
++保留重读待选队列。配额仍持有到首token；不是按实际IO开始时间扣账。
++具体配置、默认边界与复现入口见
++[`docs/TFS前置分诊与反馈开销对照-20261029.md`](../docs/TFS前置分诊与反馈开销对照-20261029.md)。
++
++新增显式研究开关`experiment.batch_feedback=true`，同一batch同一层合为一个同步帧。
++另可设置`coalesced_feedback=true`，在下一同步控制/生命周期事件前合并确认层事实。
++后者会延迟中央可见性，不能据RPC减少直接认定更快，默认关闭。
++活动许可索引、64KiB审计缓冲与流式JSONL整数复用不改变许可、输入或模型语义。
++输入数组仍相互独立。新模式定向TCP与完整Unix实验的实际结果以VALIDATION为准。
++
++相关测试为`test_batch_feedback`、`test_coalesced_feedback`、`test_trace_io`、
++`test_gateway_triage`及既有许可、TCP、层屏障和准入测试。完整原始记录留本机，不推送token数组。
+diff --git a/dynamo_vllm_cpu_sim/scripts/replay_http.py b/dynamo_vllm_cpu_sim/scripts/replay_http.py
+index ce5f132..4a6dabf 100644
+--- a/dynamo_vllm_cpu_sim/scripts/replay_http.py
++++ b/dynamo_vllm_cpu_sim/scripts/replay_http.py
+@@ -94,7 +94,8 @@ async def replay(
+     from transformers import AutoTokenizer
+ 
+     tok = AutoTokenizer.from_pretrained(str(ROOT / "configs/model"))
+-    rows = [json.loads(line) for line in trace_path.read_text().splitlines() if line.strip()]
++    from sim.trace_io import load_trace
++    rows = load_trace(trace_path)
+     jobs = []
+     records: dict[str, dict] = {}
+     skipped = 0
+diff --git a/dynamo_vllm_cpu_sim/scripts/run_tfs_stack.py b/dynamo_vllm_cpu_sim/scripts/run_tfs_stack.py
+index 8566272..87771d0 100644
+--- a/dynamo_vllm_cpu_sim/scripts/run_tfs_stack.py
++++ b/dynamo_vllm_cpu_sim/scripts/run_tfs_stack.py
+@@ -249,7 +249,8 @@ def run_one(config,trace,output,python,mode,release,workers=2):
+         write(folder/'routing.build.json',receipt)
+     from sim.stack.clock import TimeScale
+     clock = TimeScale.from_config(cfg)
+-    rows = [json.loads(s) for s in Path(trace).read_text().splitlines() if s.strip()]
++    from sim.trace_io import load_trace
++    rows = load_trace(trace)
+     assert all(r["output_tokens"]==1 for r in rows)
+     if cfg.get("cache_model") == "first_seen":
+         from sim.mooncake import validate_hit_row
+diff --git a/dynamo_vllm_cpu_sim/sim/stack/admission_service.py b/dynamo_vllm_cpu_sim/sim/stack/admission_service.py
+index 2514c10..8e369af 100644
+--- a/dynamo_vllm_cpu_sim/sim/stack/admission_service.py
++++ b/dynamo_vllm_cpu_sim/sim/stack/admission_service.py
+@@ -55,7 +55,7 @@ class AdmissionState:
+             rc = self.config['routing_accounting']
+             self.routing_score = ScoreClient(os.environ['SIM_STACK_ROUTING_SCORE_READY'],
+                                              rc['waiting_factor'],rc['rpc_timeout_wall_s'])
+-        self.log = Path(log_path).open("w",buffering=1) if log_path else None
++        self.log = Path(log_path).open("w",buffering=65536) if log_path else None
+ 
+     def now(self):
+         return self.clock.to_model(time.monotonic()-self.origin)
+@@ -120,6 +120,42 @@ class AdmissionState:
+         self.queue_event(event,raw["request_id"],timestamp_basis=basis,
+                          sender_occurred_mono=sender_time,received_s=now,rpc_transport=transport)
+ 
++    def receive_batch(self, raw, *, transport='unix'):
++        if self.fatal:
++            raise RuntimeError(self.fatal)
++        if not self.config.get('experiment',{}).get('batch_feedback'):
++            raise ValueError('batched feedback is disabled')
++        rows=raw.get('rows')
++        if (not isinstance(rows,list) or not 1<=len(rows)<=self.config['max_num_seqs']
++                or len({r.get('request_id') for r in rows})!=len(rows)):
++            raise ValueError('invalid feedback batch')
++        worker=rows[0].get('worker_id');layer=rows[0].get('payload',{}).get('layer')
++        if any(r.get('kind')!='layer_load_submitted' or r.get('worker_id')!=worker
++               or r.get('payload',{}).get('layer')!=layer for r in rows):
++            raise ValueError('feedback batch mixes workers, layers or event kinds')
++        for row in rows:
++            self.receive(row,transport=transport)
++        return dict(ok=True,events=len(rows))
++
++    def receive_flush(self, raw, *, transport='unix'):
++        if self.fatal:
++            raise RuntimeError(self.fatal)
++        if not self.config.get('experiment',{}).get('coalesced_feedback'):
++            raise ValueError('coalesced feedback is disabled')
++        from sim.stack.layerwise import layer_spec
++        spec=layer_spec(self.config);rows=raw.get('rows')
++        if (spec is None or not isinstance(rows,list) or not rows
++                or len(rows)>self.config['max_num_seqs']*spec['layers']):
++            raise ValueError('invalid layer flush size')
++        worker=rows[0].get('worker_id')
++        if any(r.get('kind')!='layer_load_submitted' or r.get('worker_id')!=worker for r in rows):
++            raise ValueError('layer flush mixes workers or event kinds')
++        keys=[(r.get('request_id'),r.get('payload',{}).get('layer')) for r in rows]
++        if len(set(keys))!=len(keys):
++            raise ValueError('duplicate request/layer in flush')
++        for row in rows:self.receive(row,transport=transport)
++        return dict(ok=True,events=len(rows))
++
+     def control(self, raw, *, transport='unix'):
+         """Atomic ledger mutation: no await between checking and debiting."""
+         if self.fatal:
+@@ -303,7 +339,11 @@ def create_app(config, upstream, feedback_socket=None, event_log=None, *,
+ 
+     def process(raw):
+         try:
+-            if raw.get('op') == 'ping':
++            if raw.get('op') == 'layer_feedback_flush':
++                response = state.receive_flush(raw,transport=transport)
++            elif raw.get('op') == 'layer_feedback_batch':
++                response = state.receive_batch(raw,transport=transport)
++            elif raw.get('op') == 'ping':
+                 response = dict(ok=True, service='admission', protocol=1)
+             elif raw.get('op'):
+                 response = state.control(raw, transport=transport)
+diff --git a/dynamo_vllm_cpu_sim/sim/stack/feedback.py b/dynamo_vllm_cpu_sim/sim/stack/feedback.py
+index 5d8c4a8..fa79d18 100644
+--- a/dynamo_vllm_cpu_sim/sim/stack/feedback.py
++++ b/dynamo_vllm_cpu_sim/sim/stack/feedback.py
+@@ -19,6 +19,8 @@ class FeedbackClient:
+         self.timeout_s = timeout_s
+         self.clock_id = clock_id()
+         self.outbox = None
++        self.layer_buffer_limit = 0
++        self.pending_layer_facts = []
+         self.pid = os.getpid()
+         self.session_id = uuid.uuid4().hex
+         self.sequence = 0
+@@ -74,7 +76,26 @@ class FeedbackClient:
+             self.close()
+             raise
+ 
++    def enable_layer_buffer(self, limit):
++        if self.outbox is not None or type(limit) is not int or limit<1:
++            raise ValueError('invalid layer buffer or idle bypass combination')
++        self.layer_buffer_limit=limit
++
++    def flush_layers(self):
++        with self.lock:
++            if not self.pending_layer_facts:
++                return
++            start=time.monotonic_ns()
++            count=len(self.pending_layer_facts)
++            self._exchange(dict(op='layer_feedback_flush',rows=self.pending_layer_facts))
++            self.pending_layer_facts.clear()
++            if os.environ.get('SIM_FINE_TRACE_DIR'):
++                from sim.stack.fine_trace import emit
++                emit('layer_feedback_flush_rpc',start,count=count)
++
+     def emit(self, kind, rid, payload=None):
++        # Synchronous parent/completion/no-load events cannot overtake facts.
++        self.flush_layers()
+         with self.lock:
+             self.sequence += 1
+             row = dict(event_id=f"engine:{self.session_id}:{self.sequence}", kind=kind,
+@@ -111,6 +132,7 @@ class FeedbackClient:
+         Any acquire retry must retain acquisition_key. Never invent a second
+         key after a timeout: the first operation may already hold a permit.
+         """
++        self.flush_layers()
+         row = dict(op=op, request_id=rid, worker_id=self.worker, **payload)
+         if self.outbox is not None:
+             return self.outbox.send(row, wait=True)
+@@ -121,6 +143,33 @@ class FeedbackClient:
+         self.emit("layer_load_submitted",rid,dict(attempt_id=self.attempts[rid],
+                   layer=layer,submitted_read_bytes=byte_count))
+ 
++    def layer_batch(self, ids, layer, byte_counts):
++        # All original per-request facts remain; only the wire frame is shared.
++        with self.lock:
++            rows=[]
++            for rid, size in zip(ids, byte_counts, strict=True):
++                self.sequence += 1
++                rows.append(dict(event_id=f"engine:{self.session_id}:{self.sequence}",
++                    kind="layer_load_submitted", request_id=rid, worker_id=self.worker,
++                    occurred_mono=time.monotonic(), clock_id=clock_id(),
++                    payload=dict(attempt_id=self.attempts[rid],layer=layer,submitted_read_bytes=size)))
++            start=time.monotonic_ns()
++            if self.layer_buffer_limit:
++                if len(self.pending_layer_facts)+len(rows)>self.layer_buffer_limit:
++                    raise RuntimeError('layer telemetry buffer bound exceeded')
++                self.pending_layer_facts.extend(rows)
++                if os.environ.get('SIM_FINE_TRACE_DIR'):
++                    from sim.stack.fine_trace import emit
++                    emit('layer_feedback_buffered',start,ids=ids,layer=layer,count=len(rows))
++                return dict(ok=True,buffered=True)
++            if self.outbox is not None:
++                raise RuntimeError("batched-feedback prototype does not support idle-bypass outbox")
++            result=self._exchange(dict(op="layer_feedback_batch",rows=rows))
++            if os.environ.get("SIM_FINE_TRACE_DIR"):
++                from sim.stack.fine_trace import emit
++                emit("batch_feedback_rpc",start,ids=ids,layer=layer,count=len(rows))
++            return result
++
+     def starting(self, rid):
+         if rid not in self.started:
+             self.started.add(rid)
+diff --git a/dynamo_vllm_cpu_sim/sim/stack/layerwise.py b/dynamo_vllm_cpu_sim/sim/stack/layerwise.py
+index eafb6b7..cf53beb 100644
+--- a/dynamo_vllm_cpu_sim/sim/stack/layerwise.py
++++ b/dynamo_vllm_cpu_sim/sim/stack/layerwise.py
+@@ -84,6 +84,11 @@ class LayerRunner:
+         self.resident = set()
+         self.submitted = set()
+         self.ready = set()
++        if config.get('experiment',{}).get('coalesced_feedback'):
++            if not config['experiment'].get('batch_feedback') or config['admission'].get('idle_bypass'):
++                raise ValueError('coalesced layer telemetry requires batch frames and idle bypass off')
++            if feedback is not None:
++                feedback.enable_layer_buffer(config['max_num_seqs']*self.spec['layers'])
+ 
+     def install(self, metadata):
+         for rid, load in getattr(metadata, "loads", {}).items():
+@@ -106,10 +111,12 @@ class LayerRunner:
+                                       compute_s=compute_s,due_mono=due_mono)
+         else:
+             self.storage.layer_submit(self.worker, pending, layer)
++        if self.feedback and self.config.get('experiment',{}).get('batch_feedback'):
++            self.feedback.layer_batch(pending,layer,[self.loads[rid]['layer_bytes'] for rid in pending])
+         for rid in pending:
+             self.submitted.add((rid,layer))
+             size = self.loads[rid]["layer_bytes"]
+-            if self.feedback:
++            if self.feedback and not self.config.get('experiment',{}).get('batch_feedback'):
+                 self.feedback.layer_submitted(rid,layer,size)
+             self.emit("layer_read_issued",layer=layer,rid=rid,bytes=size)
+ 
+diff --git a/dynamo_vllm_cpu_sim/sim/stack/read_admission.py b/dynamo_vllm_cpu_sim/sim/stack/read_admission.py
+index 93a0d59..dc38088 100644
+--- a/dynamo_vllm_cpu_sim/sim/stack/read_admission.py
++++ b/dynamo_vllm_cpu_sim/sim/stack/read_admission.py
+@@ -13,6 +13,7 @@ class FrozenClassification:
+     def __init__(self, config):
+         self.hints = {}
+         self.permits = {}
++        self.active_permit_by_request = {}
+         self.permit_keys = {}
+         self.placement = config.get("placement", "gateway")
+         super().__init__(config)
+@@ -93,7 +94,10 @@ class FrozenClassification:
+         permit = dict(permit_id=token, id=rid, worker=worker, attempt=attempt,
+                       acquisition_key=key, state="reserved", granted_s=grant_time,
+                       registered_s=now_s, forced=force)
++        if rid in self.active_permit_by_request:
++            raise RuntimeError("request already has an active permit index entry")
+         self.permits[token] = permit
++        self.active_permit_by_request[rid] = token
+         self.permit_keys[identity] = token
+         rec.reserved_s, rec.lease_open, rec.lease_release_reason = grant_time, True, None
+         self._log("admission_reserved", now_s, id=rid, worker=worker, permit_id=token,
+@@ -115,6 +119,8 @@ class FrozenClassification:
+         rec = self.records[rid]
+         before = self.held
+         permit["state"], permit["released_s"] = "rolled_back", now_s
++        if self.active_permit_by_request.pop(rid, None) != token:
++            raise RuntimeError("permit index disagrees with rollback owner")
+         rec.lease_open = False
+         rec.lease_release_reason = "allocation_failed"
+         self._log("admission_released", now_s, id=rid, permit_id=token,
+@@ -124,8 +130,8 @@ class FrozenClassification:
+         if event.event_id in self.seen_events:
+             return
+         rec = self.records[event.request_id]
+-        active = [p for p in self.permits.values() if p["id"] == event.request_id
+-                  and p["state"] in ("reserved", "submitted")]
++        token = self.active_permit_by_request.get(event.request_id)
++        active = [self.permits[token]] if token is not None else []
+         if self.placement == "scheduler" and event.kind == "load_submitted" and self.is_heavy(rec.profile):
+             if len(active) != 1 or not rec.lease_open or event.occurred_s < active[0]["granted_s"]:
+                 raise ValueError("heavy read submitted without a valid permit")
+@@ -135,6 +141,8 @@ class FrozenClassification:
+                 permit["state"] = "submitted"
+             if not rec.lease_open:
+                 permit.update(state="released", released_s=now_s, release_reason=event.kind)
++                if self.active_permit_by_request.pop(event.request_id, None) != permit["permit_id"]:
++                    raise RuntimeError("permit index disagrees with release owner")
+ 
+ 
+ class FrozenAdmission(FrozenClassification, AdmissionController):
+diff --git a/dynamo_vllm_cpu_sim/sim/stack/storage_service.py b/dynamo_vllm_cpu_sim/sim/stack/storage_service.py
+index 04f9b0c..3c2adf9 100644
+--- a/dynamo_vllm_cpu_sim/sim/stack/storage_service.py
++++ b/dynamo_vllm_cpu_sim/sim/stack/storage_service.py
+@@ -313,11 +313,8 @@ def main() -> int:
+     cfg = json.loads((ROOT / a.config).read_text())
+     if a.bandwidth_policy:
+         cfg["storage"]["bandwidth_policy"] = a.bandwidth_policy
+-    rows = [
+-        json.loads(x)
+-        for x in (ROOT / a.trace).read_text().splitlines()
+-        if x.strip()
+-    ]
++    from sim.trace_io import load_trace
++    rows = load_trace(ROOT / a.trace)
+     service = Service(cfg, rows)
+     path = Path(a.socket)
+     path.parent.mkdir(parents=True, exist_ok=True)

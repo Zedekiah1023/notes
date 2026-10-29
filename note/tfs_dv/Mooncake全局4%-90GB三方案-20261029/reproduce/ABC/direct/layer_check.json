@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "mode": "layer_pipeline",
+  "requests_with_loads": 402,
+  "layer_reads": 31356,
+  "layer_computes": 16770,
+  "steps": 215,
+  "prefetches_within_compute": 30954,
+  "compute_model_s": 47.61279597609459,
+  "between_layer_and_step_wait_model_s": 60.41642156941816,
+  "batch_histogram": {
+    "1": 125,
+    "4": 56,
+    "3": 17,
+    "2": 17
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "dataset": "ABC",
+  "name": "direct",
+  "formal": 360,
+  "K": 1,
+  "mean_ttft_ms": 1665.1866817981095,
+  "p95_ttft_ms": 3637.3167079873383,
+  "completion_ms": 8127.96149996575,
+  "slo_pct": 13.61111111111111
+}
