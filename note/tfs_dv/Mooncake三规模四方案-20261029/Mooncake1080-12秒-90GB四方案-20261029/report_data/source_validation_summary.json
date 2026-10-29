@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "visual_reviewed": true,
+  "cases": 4,
+  "formal_requests": 4320,
+  "figure_count": 7,
+  "source_report_sha256": "2d629c0f85ff5f4cae7a12bdb9fe815a282c1a9c44bf371aa0ef5895298956e5",
+  "source_validation_sha256": "21e8054be52856534e122bbc8930755071a161f2e5d121c7458ae4bf1a2d7854",
+  "original_checks": [
+    "逐请求SLO与计数",
+    "nearest-rank分位数及rank/n经验CDF",
+    "实例计算/红色IO/灰色时间账本",
+    "可用带宽事件与分桶积分",
+    "来源及产物SHA256",
+    "Markdown相对链接",
+    "ZIP CRC及逐文件内容"
+  ],
+  "client_timing_requests": 4320,
+  "limitations": "Only selected tables and figures are public. Original raw assets and full source validation are retained locally."
+}
